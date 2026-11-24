@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rana Oruç | Matematiksel Bir Teşekkür</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080a0e;
+    color: #f5f0df;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: auto;
+    padding: 30px 20px 70px;
+    text-align: center;
+}
+
+.gold {
+    color: #d9b45b;
+}
+
+.top {
+    margin-top: 65px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #c9a653;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    margin: 25px 0;
+    line-height: 1.15;
+    font-weight: normal;
+}
+
+.subtitle {
+    color: #aaa9a2;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 570px;
+    margin: auto;
+}
+
+button {
+    background: linear-gradient(135deg, #d8b45d, #a77b2d);
+    color: #101010;
+    border: none;
+    padding: 16px 30px;
+    margin-top: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px #d8b45d35;
+}
+
+.section {
+    margin-top: 65px;
+    padding: 35px 25px;
+    border: 1px solid #b994493b;
+    background: #ffffff06;
+    border-radius: 12px;
+}
+
+.section h2 {
+    color: #d9b45b;
+    font-weight: normal;
+    font-size: 26px;
+    margin-bottom: 22px;
+}
+
+.section p {
+    color: #c5c2b9;
+    font-family: Arial, sans-serif;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.formula {
+    font-size: 24px;
+    color: #e4c576;
+    margin: 25px 0;
+    line-height: 1.7;
+}
+
+.hidden {
+    display: none;
+}
+
+.reveal {
+    animation: reveal 1s ease forwards;
+}
+
+@keyframes reveal {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.footer {
+    margin-top: 65px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.number {
+    position: fixed;
+    color: #d9b45b18;
+    font-size: 25px;
+    pointer-events: none;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(100vh) rotate(0deg);}
+    100% {transform: translateY(-100px) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="container">
+
+    <div class="top">24 KASIM · ÖĞRETMENLER GÜNÜ</div>
+
+    <h1>
+        Bu Kez<br>
+        <span class="gold">Bilinmeyen Sizsiniz.</span>
+    </h1>
+
+    <p class="subtitle">
+        Sayın Rana Oruç Hocam,<br>
+        Bugün size matematiksel bir problem değil,
+        küçük bir teşekkür sunmak istiyorum.
+    </p>
+
+    <button onclick="openLetter()">
+        Sürprizi Aç →
+    </button>
+
+    <div id="letter" class="hidden">
+
+        <div class="section reveal">
+            <h2>Bir Matematikçinin Gözünden</h2>
+
+            <p>
+                Hayat, çözülmesi gereken sonsuz sayıda problemden oluşur.
+                Bazı öğretmenler ise bu problemlerin yalnızca sonucunu
+                değil, çözüm yolunu da öğretir.
+            </p>
+
+            <br>
+
+            <p>
+                Sizin dersinizde bazen X'i bulamadık,
+                bazen Y ile yollarımız ayrıldı.
+                Hatta zaman zaman aramızdaki iletişimin grafiği
+                negatif eğimli olsa da matematiğin değişmeyen
+                bir kuralı var:
+            </p>
+
+            <div class="formula">
+                Emek ≠ 0
+            </div>
+
+            <p>
+                Şaka bir yana, bize kattığınız bilgiler ve
+                gösterdiğiniz emek için teşekkür ederim.
+            </p>
+        </div>
+
+        <div class="section reveal">
+            <h2>Özel Teorem: Rana Oruç</h2>
+
+            <p>
+                Bir öğretmenin değeri yalnızca anlattığı
+                konularla ölçülemez.
+            </p>
+
+            <div class="formula">
+                lim (Emek + Bilgi) = ∞
+            </div>
+
+            <p>
+                Sonuç: İyi bir öğretmenin etkisi,
+                ders saati bittiğinde sona ermez.
+            </p>
+        </div>
+
+        <div class="section reveal">
+            <h2>Şimdi Bir Problem Çözelim...</h2>
+
+            <p>
+                Verilenler:
+                <br><br>
+                Öğretmen = Rana Oruç<br>
+                Öğrenci = Ben<br>
+                Bilinmeyen = Sözlü notum (x)
+            </p>
+
+            <div class="formula">
+                x → Maksimum
+            </div>
+
+            <p>
+                Önerilen çözüm: Öğretmenler Günü hatırına
+                pozitif bir değerlendirme yapılması. :)
+            </p>
+
+            <p class="gold" style="margin-top:20px">
+                Not: Bu önerme henüz ispatlanmamıştır.
+                Hocamızın takdirine sunulmuştur.
+            </p>
+        </div>
+
+        <div class="section reveal">
+            <h2>Son Bir Cümle...</h2>
+
+            <p>
+                Hocam, bazen anlaşamasak da sizin de
+                bu eğitim yolculuğumuzda emeğiniz var.
+                Umarım yüzünüzde küçük bir tebessüm
+                oluşturabilmişimdir.
+            </p>
+
+            <div class="formula">
+                İyi ki öğretmenimsiniz!
+            </div>
+
+            <p class="gold">
+                Öğretmenler Gününüz Kutlu Olsun<br>
+                Rana Oruç Hocam.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Matematiksel olarak hazırlanmış,<br>
+        samimiyetle sunulmuştur.
+        <br><br>
+        © 2026 · Bir öğrenciden öğretmenine
+    </div>
+
+</div>
+
+<script>
+function openLetter() {
+    const letter = document.getElementById("letter");
+
+    letter.classList.remove("hidden");
+    letter.classList.add("reveal");
+
+    document.querySelector("button").textContent =
+        "Sürpriz Açıldı ✓";
+
+    document.querySelector("button").disabled = true;
+
+    letter.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+// Hareketli matematik sembolleri
+const symbols = [
+    "∑", "π", "∞", "√", "∫",
+    "x²", "Δ", "α", "÷", "±"
+];
+
+function createSymbol() {
+    const el = document.createElement("div");
+
+    el.className = "number";
+    el.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (6 + Math.random() * 8) + "s";
+
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 14000);
+}
+
+setInterval(createSymbol, 700);
+
+// Arka plan yıldızları
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", resize);
+resize();
+
+let stars = [];
+
+for (let i = 0; i < 90; i++) {
+    stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5
+    });
+}
+
+function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#d9b45b";
+
+    stars.forEach(star => {
+        ctx.globalAlpha = Math.random() * 0.5 + 0.3;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(drawStars);
+}
+
+drawStars();
+</script>
+
+</body>
+</html>
